@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import clsx from "clsx";
 import { FC, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Avatar } from "~/components/Avatar";
 import { Text } from "~/components/Text";
 import { Timestamp } from "~/components/Timestamp";
@@ -8,7 +8,7 @@ import { User } from "~/types/global";
 
 type Props = {
   user: User;
-  link?: string;
+  link: string;
   isSelected?: boolean;
   isUnread?: boolean;
 };

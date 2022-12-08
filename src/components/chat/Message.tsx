@@ -3,7 +3,7 @@ import {
   DocumentDuplicateIcon,
 } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { FC, useMemo, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { useClickAway, useLongPress } from "react-use";
 import { Avatar } from "~/components/Avatar";
 import { ContextMenu } from "~/components/ContextMenu";
@@ -28,9 +28,7 @@ export const Message: FC<Props> = (props) => {
     setIsSelected(false);
   });
 
-  const text = useMemo(() => {
-    return "the quick brown fox ".repeat(Math.floor(Math.random() * 5 + 1));
-  }, []);
+  const text = "the quick brown fox ".repeat(Math.floor(Math.random() * 5 + 1));
 
   return (
     <ContextMenu

@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import clsx from "clsx";
 import { FC, MouseEventHandler, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { ButtonStyle } from "~/types/button";
 
 const buttonStyleToColor = {
@@ -27,7 +27,7 @@ export const Button: FC<Props> = (props) => {
   );
 
   return props.href ? (
-    <Link className={className} href={props.href}>
+    <Link className={className} to={props.href}>
       {props.children}
     </Link>
   ) : (

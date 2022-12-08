@@ -10,9 +10,9 @@ import {
   FolderIcon as FolderIconSolid,
   UserIcon as UserIconSolid,
 } from "@heroicons/react/24/solid";
-import { Link, useRouter } from "@tanstack/react-router";
 import clsx from "clsx";
 import { ReactNode } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavLink {
   href: string;
@@ -40,7 +40,7 @@ const links: NavLink[] = [
 ];
 
 export const Nav = () => {
-  const { state } = useRouter();
+  const location = useLocation();
 
   return (
     <div className="flex border-t">
@@ -50,13 +50,11 @@ export const Nav = () => {
           to={link.href}
           className={clsx(
             "flex flex-1 justify-center p-4 ring-inset",
-            state.latestLocation.href === link.href
-              ? "text-primary-500"
-              : "text-medium"
+            location.pathname === link.href ? "text-primary-500" : "text-medium"
           )}
         >
           <div className="flex h-7 w-7">
-            {link.icon(state.latestLocation.href === link.href)}
+            {link.icon(location.pathname === link.href)}
           </div>
         </Link>
       ))}

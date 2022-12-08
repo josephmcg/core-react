@@ -1,5 +1,5 @@
-import { useRouter } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/controls/Button";
 import { Input } from "~/components/controls/Input";
 import { Switch } from "~/components/controls/Switch";
@@ -8,7 +8,7 @@ import { useAuth } from "~/contexts/auth";
 
 const IndexPage = () => {
   const { setAuth } = useAuth();
-  const { history } = useRouter();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,7 +17,7 @@ const IndexPage = () => {
 
   const handleLogin = () => {
     setAuth(true);
-    history.push("/chat");
+    navigate("/chat");
   };
 
   return (
