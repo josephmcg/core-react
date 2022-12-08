@@ -28,6 +28,9 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": [1, { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "react/prop-types": 0,
+    "no-case-declarations": 0
   }
 }
