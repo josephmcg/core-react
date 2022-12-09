@@ -257,7 +257,7 @@ export const Chatbar = () => {
         }}
       >
         <Editable
-          className="thin-scroll max-h-half flex-grow self-center overflow-auto py-4 focus:ring-0"
+          className="thin-scroll max-h-half flex-grow self-center overflow-auto py-4 focus:ring-0 focus:ring-offset-0"
           decorate={decorate}
           renderLeaf={renderLeaf}
           renderElement={renderElement}
