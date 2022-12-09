@@ -1,10 +1,8 @@
 import { Switch as HeadlessSwitch } from "@headlessui/react";
 import clsx from "clsx";
 import { forwardRef, useState } from "react";
-import { Size } from "~/types/global";
 
 type Props = {
-  size?: Size;
   label: string;
 };
 

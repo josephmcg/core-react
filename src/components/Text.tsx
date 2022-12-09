@@ -6,7 +6,7 @@ type Props = {
   children: ReactNode;
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label" | "div";
   className?: string;
-  size: Size;
+  size?: Size;
   color?: "light" | "medium" | "dark";
 };
 
@@ -30,13 +30,48 @@ export const Text: FC<Props> = (props) => {
       case "h6":
         return "text-light";
     }
-    return "text-medium";
+  };
+
+  const sizeClass = () => {
+    switch (props.size) {
+      case "4xl":
+        return "text-4xl";
+      case "3xl":
+        return "text-3xl";
+      case "2xl":
+        return "text-2xl";
+      case "xl":
+        return "text-xl";
+      case "lg":
+        return "text-lg";
+      case "md":
+        return "text-base";
+      case "sm":
+        return "text-sm";
+      case "xs":
+        return "text-xs";
+    }
+    switch (props.as) {
+      case "h1":
+        return "text-3xl";
+      case "h2":
+        return "text-2xl";
+      case "h3":
+        return "text-xl";
+      case "h4":
+        return "text-lg";
+      case "h5":
+        return "text-base";
+      case "h6":
+      case "label":
+        return "text-sm";
+    }
   };
 
   return createElement(
     props.as || "div",
     {
-      className: clsx(colorClass, props.className),
+      className: clsx(colorClass(), sizeClass(), props.className),
     },
     props.children
   );

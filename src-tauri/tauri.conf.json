@@ -55,10 +55,11 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
         "resizable": true,
         "title": "satellite",
-        "width": 800
+        "maximized": true,
+        "minHeight": 500,
+        "minWidth": 940
       }
     ]
   }

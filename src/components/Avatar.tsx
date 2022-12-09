@@ -4,13 +4,14 @@ import { FC } from "react";
 import { Size } from "~/types/global";
 
 const sizeToPx: Record<Size, string> = {
-  "2xs": "w-5",
-  xs: "w-6",
-  sm: "w-8",
-  md: "w-10",
-  lg: "w-12",
-  xl: "w-14",
-  "2xl": "w-16",
+  xs: "w-5",
+  sm: "w-6",
+  md: "w-8",
+  lg: "w-10",
+  xl: "w-12",
+  "2xl": "w-14",
+  "3xl": "w-16",
+  "4xl": "w-20",
 };
 
 type Props = {

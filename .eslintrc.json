@@ -13,10 +13,8 @@
   },
   "settings": {
     "react": {
-      // Tells eslint-plugin-react to automatically detect the version of React to use.
       "version": "detect"
     },
-    // Tells eslint how to resolve imports
     "import/resolver": {
       "node": {
         "paths": ["src"],
@@ -28,7 +26,6 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": [1, { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-var-requires": 0,
     "jsx-a11y/no-autofocus": 0,
     "react/prop-types": 0,
     "no-case-declarations": 0

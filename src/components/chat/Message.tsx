@@ -55,7 +55,7 @@ export const Message: FC<Props> = (props) => {
           isSelected && "scale-[0.98] opacity-75"
         )}
       >
-        <div className="w-5">{props.showAvatar && <Avatar size="2xs" />}</div>
+        <div className="w-5">{props.showAvatar && <Avatar size="xs" />}</div>
         <div
           className={clsx(
             "max-w-[75%] rounded-xl border border-[#ffffff10] px-3 py-2 text-sm",

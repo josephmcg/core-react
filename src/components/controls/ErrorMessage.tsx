@@ -7,8 +7,8 @@ type Props = {
 
 export const ErrorMessage: FC<Props> = ({ id, children }) => {
   return (
-    <p id={`${id}-error`} className="mt-2 text-sm text-red-600">
+    <span id={`${id}-error`} className="text-sm text-red-600">
       {children}
-    </p>
+    </span>
   );
 };

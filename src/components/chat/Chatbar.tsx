@@ -285,7 +285,7 @@ export const Chatbar = () => {
                       : "bg-transparent text-medium"
                   )}
                 >
-                  <Avatar size="xs" />
+                  <Avatar size="sm" />
                   {char}
                 </div>
               ))}

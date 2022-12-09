@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/controls/Button";
 import { Input } from "~/components/controls/Input";
-import { Switch } from "~/components/controls/Switch";
 import { DefaultLayout } from "~/components/layout/Default";
 import { useAuth } from "~/contexts/auth";
+import { ButtonColor } from "~/types/button";
 
 const IndexPage = () => {
   const { setAuth } = useAuth();
@@ -42,8 +42,9 @@ const IndexPage = () => {
             },
           })}
         />
-        <Switch label="save pin" />
-        <Button type="submit">Login</Button>
+        <Button type="submit" color={ButtonColor.Primary}>
+          Login
+        </Button>
       </form>
     </DefaultLayout>
   );

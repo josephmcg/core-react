@@ -1,4 +1,4 @@
-export type Size = "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 export type Color = "primary" | "secondary" | "success" | "warning" | "danger";
 
 export type User = {

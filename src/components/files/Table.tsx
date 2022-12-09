@@ -66,19 +66,14 @@ export const FileTable: FC = () => {
     <div>Selected folder has no children</div>
   ) : (
     <table className="w-full table-fixed" role="grid">
-      {/* <colgroup>
-        <col span={1} className="w-[66%]" />
-        <col span={1} />
-        <col span={1} />
-      </colgroup> */}
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
+          <tr key={headerGroup.id} className="sticky top-0 z-10 border-b">
             {headerGroup.headers.map((header) => (
               <th
                 key={header.id}
                 scope="col"
-                className="sticky top-0 z-10 border-b bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
+                className="bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
               >
                 {header.isPlaceholder
                   ? null

@@ -30,7 +30,7 @@ export const ChatListItem: FC<Props> = (props) => {
     >
       <div className="flex items-center gap-3">
         <div className="flex-shrink-0">
-          <Avatar src={user.avatar} size="md" />
+          <Avatar src={user.avatar} size="lg" />
         </div>
         <div className="min-w-0 flex-1">
           <div className="align-center flex justify-between gap-2">

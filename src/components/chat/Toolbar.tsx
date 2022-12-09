@@ -4,7 +4,7 @@ import { Avatar } from "~/components/Avatar";
 export const Toolbar: FC = () => {
   return (
     <>
-      <Avatar size="sm" />
+      <Avatar />
     </>
   );
 };

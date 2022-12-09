@@ -1,4 +1,4 @@
-export enum ButtonStyle {
+export enum ButtonColor {
   Default,
   Primary,
   Error,

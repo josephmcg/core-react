@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Button } from "~/components/controls/Button";
 import { DefaultLayout } from "~/components/layout/Default";
-import { ButtonStyle } from "~/types/button";
+import { ButtonColor } from "~/types/button";
 
 // display on 404 error
 export const InvalidPage: FC = () => (
@@ -20,7 +20,7 @@ export const InvalidPage: FC = () => (
           </p>
         </div>
         <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-          <Button to="/" style={ButtonStyle.Primary}>
+          <Button to="/" color={ButtonColor.Primary}>
             Go back home
           </Button>
         </div>
