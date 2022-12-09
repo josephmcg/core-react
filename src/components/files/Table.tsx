@@ -65,15 +65,14 @@ export const FileTable: FC = () => {
   return !activeDirectory.length ? (
     <div>Selected folder has no children</div>
   ) : (
-    <table className="w-full table-fixed" role="grid">
+    <table className="w-full table-fixed border-separate" role="grid">
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id} className="sticky top-0 z-10 border-b">
+          <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
               <th
                 key={header.id}
-                scope="col"
-                className="bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
+                className="sticky top-0 border-b bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
               >
                 {header.isPlaceholder
                   ? null
