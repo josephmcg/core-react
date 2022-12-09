@@ -72,7 +72,7 @@ export const FileTable: FC = () => {
             {headerGroup.headers.map((header) => (
               <th
                 key={header.id}
-                className="sticky top-0 border-b bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
+                className="sticky top-0 border-b bg-secondary-900 py-3 px-2 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
               >
                 {header.isPlaceholder
                   ? null
@@ -92,11 +92,12 @@ export const FileTable: FC = () => {
             tabIndex={0}
             onKeyDown={(event) => handleKeyDown(event, row.original)}
             onClick={() => handleSelection(row.original)}
+            className="cursor-pointer ring-inset"
           >
             {row.getVisibleCells().map((cell) => (
               <td
                 key={cell.id}
-                className="truncate border-b p-3 first-of-type:pl-4"
+                className="truncate border-b py-3 px-2 first-of-type:pl-4"
                 title={cell.getValue<string>()}
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
