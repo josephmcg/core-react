@@ -1,6 +1,6 @@
 import { FC } from "react";
+import { MOCK_USERS } from "~/assets/mock";
 import { ChatListItem } from "~/components/chat/ListItem";
-import { MOCK_USERS } from "~/mock";
 
 export const ChatList: FC = () => {
   return (

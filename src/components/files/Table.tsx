@@ -65,15 +65,12 @@ export const FileTable: FC = () => {
   return !activeDirectory.length ? (
     <div>Selected folder has no children</div>
   ) : (
-    <table
-      className="w-full table-fixed border-separate border-spacing-1"
-      role="grid"
-    >
-      <colgroup>
+    <table className="w-full table-fixed" role="grid">
+      {/* <colgroup>
         <col span={1} className="w-[66%]" />
         <col span={1} />
         <col span={1} />
-      </colgroup>
+      </colgroup> */}
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
@@ -81,7 +78,7 @@ export const FileTable: FC = () => {
               <th
                 key={header.id}
                 scope="col"
-                className="sticky top-0 z-10 border-b bg-secondary-900 py-3 text-left text-sm first-of-type:pl-12"
+                className="sticky top-0 z-10 border-b bg-secondary-900 p-3 text-left text-sm first-of-type:w-[66%] first-of-type:pl-12"
               >
                 {header.isPlaceholder
                   ? null
@@ -105,7 +102,7 @@ export const FileTable: FC = () => {
             {row.getVisibleCells().map((cell) => (
               <td
                 key={cell.id}
-                className="truncate border-b py-3 first-of-type:pl-4"
+                className="truncate border-b p-3 first-of-type:pl-4"
                 title={cell.getValue<string>()}
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

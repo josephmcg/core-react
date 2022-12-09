@@ -34,8 +34,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
-        space: ["var(--font-space-mono)"],
+        poppins: ["poppins"],
+        space: ["space-mono"],
       },
       spacing: {
         half: "50vh",
@@ -58,7 +58,7 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in": "fade-in 0.5s ease-out",
+        "fade-in": "fade-in 500ms ease-out",
         ripple: "ripple 300ms linear infinite",
       },
     },

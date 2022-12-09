@@ -1,4 +1,4 @@
-import { MOCK_ITEMS } from "~/mock";
+import { MOCK_ITEMS } from "~/assets/mock";
 import { IridiumItem } from "~/types/file";
 
 type State = {

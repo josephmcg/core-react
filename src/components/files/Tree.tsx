@@ -1,6 +1,6 @@
 import { FC } from "react";
+import { MOCK_ITEMS } from "~/assets/mock";
 import { TreeItem } from "~/components/files/TreeItem";
-import { MOCK_ITEMS } from "~/mock";
 
 export const FileTree: FC = () => {
   return (

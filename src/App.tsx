@@ -4,6 +4,7 @@ import { IndexPage } from "~/routes";
 import { ChatPage } from "~/routes/chat";
 import { FilesPage } from "~/routes/files";
 import { FriendsPage } from "~/routes/friends";
+import { InvalidPage } from "~/routes/invalid";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
     path: "friends",
     element: <FriendsPage />,
   },
+  // 404
+  { path: "*", element: <InvalidPage /> },
 ]);
 
 const App = () => {

@@ -23,7 +23,7 @@ const IndexPage = () => {
   return (
     <DefaultLayout>
       <form
-        className="w-xs mt-8 flex w-[320px] flex-col space-y-6"
+        className="w-xs flex w-[320px] flex-col gap-6"
         onSubmit={handleSubmit(handleLogin)}
         method="POST"
       >
