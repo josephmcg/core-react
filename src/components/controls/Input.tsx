@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute, useId } from "react";
 import {
   FieldError,
   FieldErrorsImpl,
@@ -9,10 +9,10 @@ import {
 import { UseFormRegisterReturn } from "react-hook-form/dist/types/form";
 import { ErrorMessage } from "~/components/controls/ErrorMessage";
 
+// if part of a validated form ? use formProps : use onChange
 type Props = {
   label: string;
-  formProps: UseFormRegisterReturn;
-  autoComplete?: string;
+  formProps?: UseFormRegisterReturn;
   note?: string;
   error?: FieldError | Merge<FieldError, FieldErrorsImpl<FieldValues>>;
   value?: string;
@@ -21,13 +21,16 @@ type Props = {
   type?: HTMLInputTypeAttribute;
   placeholder?: string;
   showLabel?: boolean;
+  onChange?: (val: string) => void;
 };
 
 export const Input = (props: Props) => {
+  const id = useId();
+
   return (
     <div className={clsx("flex flex-col gap-2", props.className)}>
       <label
-        htmlFor={props.formProps.name}
+        htmlFor={id}
         className={clsx("block text-sm font-medium", {
           "sr-only": !props.showLabel,
         })}
@@ -35,8 +38,7 @@ export const Input = (props: Props) => {
         {props.label}
       </label>
       <input
-        id={props.formProps.name}
-        autoComplete={props.autoComplete || props.formProps.name}
+        id={id}
         className={clsx(
           "block w-full rounded-md border-none bg-secondary-800 py-2 px-3 shadow-sm ring-offset-secondary-900 text-light focus:ring-2 focus:ring-offset-2 focus:ring-offset-secondary-900",
           props.error
@@ -45,16 +47,15 @@ export const Input = (props: Props) => {
         )}
         defaultValue={props.value}
         aria-invalid={Boolean(props.error)}
-        aria-errormessage={`${props.formProps.name}-error`}
+        aria-errormessage={`${id}-error`}
         autoFocus={props.autoFocus}
         type={props.type || "text"}
         placeholder={props.placeholder}
+        onChange={(e) => props.onChange && props.onChange(e.target.value)}
         {...props.formProps}
       />
       {props.error && (
-        <ErrorMessage id={props.formProps.name}>
-          {props.error.message?.toString()}
-        </ErrorMessage>
+        <ErrorMessage id={id}>{props.error.message?.toString()}</ErrorMessage>
       )}
       {props.note && <div className="text-sm text-gray-600">{props.note}</div>}
     </div>
