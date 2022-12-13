@@ -145,7 +145,7 @@ export const MOCK_ITEMS: IridiumItem[] = [
         shared: false,
         modifiedAt: 23764278934,
         size: 0,
-        parentId: "5",
+        parentId: "3",
         type: DirectoryTypes.DEFAULT,
         children: [
           {
